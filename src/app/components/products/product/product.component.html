@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-body">
+    <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
+      <input type="hidden" name="$key" [(ngModel)]="productService.selectedProduct.$key">
+      <div class="form-group">
+        <input type="text" 
+          #name="ngModel" name="name" id="" 
+          class="form-control" [(ngModel)]="productService.selectedProduct.name">
+      </div>
+
+      <div class="form-group">
+        <input type="text" 
+          #name="ngModel" name="category" id="" 
+          class="form-control" [(ngModel)]="productService.selectedProduct.category">
+      </div>
+
+      <div class="form-group">
+        <input type="text" 
+          #name="ngModel" name="location" id="" 
+          class="form-control" [(ngModel)]="productService.selectedProduct.location">
+      </div>
+      <div class="form-group">
+        <input type="text" 
+          #name="ngModel" name="price" id="" 
+          class="form-control" [(ngModel)]="productService.selectedProduct.price">
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">
+            <i class="fas fa-save"></i> 
+        </button>
+        <button class="btn btn-default" (click)="resetForm(productForm)" type="reset">
+          <i class="fa fa-sync-alt"></i>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

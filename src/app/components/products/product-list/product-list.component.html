@@ -1,0 +1,27 @@
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Location</th>
+      <th>Price</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of productList">
+      <td>{{product.name}}</td>
+      <td>{{product.category}}</td>
+      <td>{{product.location}}</td>
+      <td>{{product.price}}</td>
+      <td>
+        <button class="btn btn-secondary btn-sm" (click)="onEdit(product)">
+          <i class="fa fa-edit"></i>
+        </button>
+        <button class="btn btn-secondary btn-sm" (click)="onDelete(product.$key)">
+          <i class="fa fa-trash"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
